@@ -1,0 +1,19 @@
+
+nav{
+    color: rgba(228, 76, 76, 0.726);
+    background-image: url(https://strackandvantil.com/wp-content/uploads/2018/03/bakery-department.jpg);
+}
+
+h1{
+    border-style: double none double none;
+    border-color: blueviolet;
+    margin: 10px 400px 10px 400px;
+    background-image: url(https://strackandvantil.com/wp-content/uploads/2018/03/bakery-department.jpg);
+    background-size: cover;
+}
+.shadow{
+    text-shadow: 2px 2px #ffffff;
+}
+.shake{
+    color: rgba(221, 12, 12, 0.74);
+}
