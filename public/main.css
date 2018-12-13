@@ -16,6 +16,13 @@ h1{
 }
 .shake{
     color: rgba(221, 12, 12, 0.74);
+    animation: shake 2s;
+}
+.color{
+    color: rgba(30, 113, 128, 0.952)
+}
+#shake1{
+    animation: shake 1s;
 }
 a:link {
     text-decoration: none;
@@ -31,4 +38,32 @@ a:link {
   
   a:active {
     text-decoration: none;
+  }
+#shake{
+    animation: shake 1s;
+}
+
+  @keyframes shake {
+    from,
+    to {
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+      -webkit-transform: translate3d(-10px, 0, 0);
+      transform: translate3d(-10px, 0, 0);
+    }
+  
+    20%,
+    40%,
+    60%,
+    80% {
+      -webkit-transform: translate3d(10px, 0, 0);
+      transform: translate3d(10px, 0, 0);
+    }
   }

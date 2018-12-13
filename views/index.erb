@@ -24,7 +24,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
 <div class="w3-top">
   <div class="w3-white w3-xlarge" style="max-width:1200px;margin:auto">
     <div class="w3-button w3-padding-16 w3-left" onclick="w3_open()">☰</div>
-    <div class="w3-right w3-padding-16 ">#1 Rated</div>
+    <div class="w3-right w3-padding-16" id="shake" >#1 Rated</div>
     <div class="w3-center w3-padding-16">
       <h1>
         <a href="/">
@@ -42,17 +42,17 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
   <div class="w3-row-padding w3-padding-16 w3-center" id="food">
     <div class="w3-third ">
       <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Pound_layer_cake.jpg" alt="Cake" style="width:100%">
-      <h3><a href="/cake" >Cake: The ones WE Sell</a></h3>
+      <h3><a class="color" href="/cake" >Cake: The ones WE Sell</a></h3>
       <p>Come enjoy our Cakes, They are made to order and fresh!</p>
     </div>
     <div class="w3-third ">
       <img src="https://thebusybaker.ca/wp-content/uploads/2018/08/best-ever-greek-yogurt-chocolate-chip-muffins-fbig3.jpg" alt="Muffin" style="width:100%">
-      <h3><a href="/muffin" >Muffins: Ones We Use</a></h3>
+      <h3><a class="color" href="/muffin" >Muffins: Ones We Use</a></h3>
       <p>Once again, our muffins were rated the best on this side of the InterWebs!</p>
     </div>
     <div class="w3-third ">
       <img src="https://www.mybakingaddiction.com/wp-content/uploads/2016/04/mm-cookies-4-1500-1-600x900.jpg" alt="Cookies" style="width:100%">
-      <h3><a href= "/cookie">Cookies: Ones we Own</a></h3>
+      <h3><a class="color" href= "/cookie">Cookies: Ones we Own</a></h3>
       <p>Cookies so delscious we sell out rightafter!</p>
     </div>
   </div>
@@ -81,22 +81,26 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
       Right, Antartica 33233
       234-23-1322-0
       </pre>
-      <p>Powered by <a href="Github.com" target="_blank">Github</a></p>
+      <p>Powered by <a href="https://github.com/dantunish/bakery" target="_blank">Github</a></p>
     </div>
   
     <div class="w3-third">
       <h3>BLOG POSTS</h3>
       <ul class="w3-ul w3-hoverable">
+      <a href="https://www.youtube.com/watch?v=gVEdQJ7qtJw" target="_blank">
         <li class="w3-padding-16">
           <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxISEBAQEBIQEA8QEA8PDw8PDw8NDQ0PFREWFhURFRUYHSggGBolGxUVITEhJSkrLi4uFx8zODMtNyg5LisBCgoKDg0OFxAQFSsZFR0rKysrKysrLSstLSstLS0tKysrLS0rLTctLTcrNzcrNy03LSsrLS0rLS0tLSsrLSsrK//AABEIAO4A1AMBIgACEQEDEQH/xAAcAAACAwEBAQEAAAAAAAAAAAADBAIFBgEABwj/xAAzEAACAQMDAwMCBAYDAQEAAAAAAQIDBBEFEiExQVEGImETcRSBkaEVMkJScrEjYtEzFv/EABkBAAIDAQAAAAAAAAAAAAAAAAECAAMFBP/EACQRAAIDAAIDAAICAwAAAAAAAAABAgMREiEEEzFBURQyImFx/9oADAMBAAIRAxEAPwDJ6rFKCS4x/wCAbK22e/j/AI6Tk/l7ckr+W7an/WwVS6xCou7Thj4xgpLUWlvcp7pfn+xpparBU8dXtX+jAWNV7H4/l/Y0Vqt0VjLeEUTR11doup+oopcRYGWvSnxFYQrb6VKcU1F8j1vodRdiouwSnUlJ85JKyU1ysP57lx/CZpZS5AujJYyuhNGSKmlpi6ef9gZ6K1LOPhmlt6O7lr5/MsKdpnknJjpGQlovlC1fQU1/L+x9C/BJrkH/AA9B5sL4nzOXp9eF+hB6Aj6XV0xeBWekfA3sYOEWfO56Mo9AU9K+DeV9Ma7CNWzxxgPsYPTExM9KAS0qXY2dWz+ALthlcxH40WY5WDTxJDVPSkzSTtU+qFpW218cf6D7WT+PFCNPSo46dA9G1j4X6B3W29ePnsSp1ExeTHUIr8EFbIXu7UskcqUck5MZxWGOv7XwuhXxn27mrv7bhmT1GntkdFctM/yK87Os8AhX45PFpyGgqVW5xf8ASk8L5OXb4+/ItRq8rJK6n7Yv/JfuIkPo/oaUlKn/AHNNH0zSLKEYrEey58nynQ7jbWh/kj7FZcRX2Oe/6dnj/BrTaSUEvv8A7Y3sAWnR/cYZznQQkgFWig0pgJ1QMZIHTooahEXjIPBkCw8SeASZ2MwiB4xOumjsH0C7SE0SqUF4Ky4sk3nBeygJ3JAqRn69qJVLYu6sciN37VkUt5FJcQwVN1dKJaX1VJOc3tiume5hNSvpVZPHtguy/wBsuqrcim67ih281HPGVjsIxvJLo/yPWOmwqNR+qlJ9E1hP8xi99LV6ackt0fK5Or1JHH/IkwtvqjzyX1ldqaMOoSi8SWMFxpl8k+pVOH6L6r96kaO7oppmN9QW2MvwaqlexnJQi90nzxyl9yu1+19knjsJXLGPck4mJR080eO0ySzh2JXMvavuyFq+X9mCrT7AGDWL9yPtunVt1ClLzCP+j4fazw8n0Sz9QqFtSiuZKOOOTm8hfDt8V/TaU7yMU8vuxG69Q048J5fwY2F99STVebpw68PDYCHqG3otqEPq88Sk+TnUGzqc4r6a6nq86n8kJy+0WFjc1O9OovvFmatPW1Zf/OnS4mpJNPld0Xdl60uNz+vbpQ65inlIb0sX3r8FpRuew9SqALTUba7Tx7ZrjDxCovy7np0JQ+Y9n/6I4tDKakPRmdyL05jCBoGHoTH6ZVRlhotLeQQMlNFXePLwXFRcFVcQ9wBUxRwwii1S4Sy30im/uaC4i9rwZypaOrUxJeyL5Ih0zC69cVZ7XPK+plxh2S7FdpthOrVjQpx31auYqOUsvGe5rvW1mlVpPCUNmPzyZetZVFOFSi3mLTTT2tP7mlVijpnXNuWA6ts4NxksOLaa8NGy9Eak57qFVuXtzBvwuqKCr9Sf1Klxt3zSxtWFwg/pVTjcU3nEVub446eR+SlFlSi1JFv6j9PRllwSWc/qY630h79ssr5R9A1S8byo8t9BTTNOcpZmuexwu3DSjUmuyfp7RYQi2lmT6yfU5ren+yXHZmptrZRSwB1G13Rf2Zzc3ulrzMPhV/QcakkeNFrWmP60uDx3qzo4JVdmehIHNkUzkmXnMFpyLuzu1GKbfOOF4KCLHrG3c3hCTWovqk0+hucpVpc9F37JAo2uef6fPyaf+FfTtJzx7sYS8clFa0JSeyPKw3jwNUljYtze4xmlTXElnCWPCyab0vrapyVKruqQl7fdzs+UZjTNZqKhUs5x3U5VFVgtvvhVXGc+MZH6ENs1nK6ZaXQsWS6Ke49m+1b0zCpipTbhP+ZSjxklZX84JUrhZ4xu7/cttMrbrek859q584F762jU+/7mdcuzU8ftdhaUU+U8obhTFtMsZQXLbXyWaiUDyFJ0x60BTiFt+CC/gaYhcR5HsitwiCoW2gadqlLKXD6ryMInAiYxQaroH4hJT/peU0J0/SNOH9Uvsa5sXrcjq2S6B603uGan6ZpPl5ljon0OfwdYwuPsX8gTXwB2S/ZZGuKKmlpkY/cPRoc8D30ZPsGo2uOvUqesdkIR4BV49R2URasiCGP1XTs1G/hHi8r0syPDcmDD4MdOE4R/Y1jJROhTy0vJpNHstryVfp+2c6v2PoWmaX3ZzXTzo7vGrX1nI1N1N0pLiUcN+Cqt9AqQmpUZKXZ5fbwa2NhFjdCyjFFEPIcf+F9tEZmet9EqPlRjF931GbP0rLdulPnPRI09KkklgYptIf3v8FK8ZELGy2xUM8JYwO06MV2BRn4GIxKnLS/MJ7uDx4hJiNgPSkTpMWlINRkKTBuIKqicGekEAjUWD0ZBa8ReLIQLk7g5EngAxzaj2xE0jjIQjtPNEkckQgGoKVBqoK1EAKEqq5PEqnU8AJ+fQsOjBBI9DZZkRNj6Cs8ycsdX+x9Rs7JY6GO9HUNsIfY+gWXQy7XszVrXGKAz0/wQ/BzLjad2C4NyKmNrPyMU7TzyPbSSQcByAwpJEtoQ9gIugZIDUYzNC1QRkANhqUhapILRYAj8GTAwYRBFIVUI1lgsZRFa0CBIUJ5GolclhjdKoQIfBCSJKZxshCOCLJMgyEB1BWohmQvUAFCkkcJyPECfngPax3ThH/sgA9o0M1qa8yRry+GTBdo+q+nqbSivhI29osIzejUOF9jSUuiMt/TVfwciTQCDDRYRTuD2CSRJIgukNpxoNtIyiQmi8hS4eB2aK68l2EYUKVZDFs+gvUjknQlgVDFnBh4xEqcxqnVHQMDuArXQadYQu6/DIFIBVlydhMr1ceQkbhcAH4lhGqFVQSOwqA0GD24jJg1M85EBhyTATCTkBnIAcAyZ4FUqcniaTD89ou/TNPNxS++WUkUab0ZTzcL/AKrJq29RZmU/2R9e0uPtLemVmnrEUWMJGYaTGoBYi8JBFIbRRiLJqQspHdxNFwa3EJSA7zkpEDh6pIqLyXvLOTKjWfalPsuGVyGSJxIN46FfG94KjUfUEo5UINv56EXZaq2af6+Akbo+df8A6e4z/JHHhZLOw9SOTUZwcW+/Ys4tD8Dbfiis1K8SXL4FHe5XAlctz4F0KhhX1LypKTabUfBZ6bUk5JMJb6ZlFnZaeo8kJKSSLGC4B1IdwyOVAYUJgozCbxdnsgGJzmL1aiO1GV15WwQmHatbnqeK2c3k4DCHxuJqPREv+d/4mXiaL0hUSrZ+DWt/ozKp/uj7DZT9qH4MpLCtwi1pzMs08HYyJqQpGYVTDoMDqZNTFt5NSJoMDbjjkDyeyTQk0wV1SU4yi1lNYJpnRQGRlYVKbaxuj2fdI6tP3dY4+5qZwyQdEKLVazMS0aH9oOtpcV0T/Q1ioI87ZeA6w+1mThbvwywsrDuy5/Cx8B4UUgYR2i0KKSCJBZoHKWCFT1kZAZTJVagjcVgkSGpEEK2lxu7jQo4KuyolByk/CLO56ClusRb+SEELjh4+DwK9l72eDgNPjqLTQau2qiqGrGWJp/JrSWoya3kkfVtLucpF7RuODFaVX9qNHbVDLksZqp6i7jVCRqlbTmGjIUbCwVQJCoIxmHhIAMG/qHvqi7mCdQgMHozCKQnSmGjIOCsPk8DTJZDgAsTuAaqYIVLuK7kGSb+BcHJ1UlyVNzq66ISnc1J9M4Bpeqf2WdxqCXcq6+tJdWVN5Sq7kvPcXuNLlld/JC7hBFjPW0J3WuwinKTwvuV+p2/0ob5cRXVmXsLWVer3cct89kWxh1pVNxXSRu/S2o/Vy+izwvg1MTPaBpn0orHBo6aKZfSpit0IKaUX+ZY3fQoZ1OpEgClefJ4TvK+JfkcLcF0+XE6bwyCJ0+ppmSjWenb3K2vsbiy5SPnmjx9yxwbvT6mMGfdHGalL2JdUojMYCtOY5SkUFxKMQsUeig0YkFFLieEV34vnqWd7DgwWt6fdU81Kc245ztS5REtHSNpRu0NQu15PlNv6iqxko1Hjy2sFl/HFmPvT3NJYeeSz1sR8dPo0r+K6tClbWorpyZqdGpt3NtrqN6PSjUW5PKy0/hoVosjGK7HZ6tObxFMbt7OcurYWjbxhzwvl8Itac0kRR0Wd+dRRVfwXLTz0f6lrStYpYwVmrep7a3eKk1u/tj7pfsIVvXdqktsnLPiLyMoFUrJy+l9cUI9cJlLql7SpbfqShByeI7mlky+t+u6spL8PFRgu81lyf2Mbqt5Wu6qlUe6b4SSxGK+EWKrfoP8AJGm9Uax+Jat6KThFpzksNN9lku/SejqEctcvuU+g6QqaWeZPGTd6bDCQs2ksR0cWo6/o1CikTaCMXqTOcTRS/q4Rnq1T+ZlpqVQzup1sRY0VoH8Ku7rZm2cAx+Tx1KJzuRicHo9SaRJI7TPLrRJ+5G1sKmUj55ptXbI2mmXKeDjuiaFEujTUpD1CsVNKrkNTqYZys6TRUHkYRWWlYsISAQ5Vhkg7ZNYYc8mQm4Yv1B6VhUy0sP4MPfela0HmHuXxwz7NcU8opb22+C2NrQyrjP79PnC1a6hD6cs4xjlcoFY3tWk805yi31w+P0N3Ws4yT3RT/Ira+iwfKWB1ZF/UWrxn+GZq71CvVW2pVqSj/buaQN3FZpRdWrtXCW+WEaWhosM+5tfuGjolPyxlKIHRn0xytm3l8t9W+WwqpJG2o6JQTy8teBh2dBLEaUfzQfYgqv8A0Yyy091X4XkttK0mNNtvmXZl47VdoqK8JYPfSwVuz9F9VPetHKUeVjuaWxWEiisqeZZ7F/SfBSynyH3gWpITrVCdWoV11W4YhzIR1Ct1Mhr19tS+WXeoXPUobLRp3tbPKoQeJT6JvukdFSS7ZXY3mI9ZVFOCkuez4fDPH0Sw0mnSpxpwglFfHLfk8O7UKqj4WSSIkos7zMJ03h5NDpl1jBnkN2VXDKrI6i+mWG9s7jOB5TMvZXPQu6FxlHDOOGhF6XtrW6Ftb1DM29YtrauVFheQZGcsAaFTgJLkgDyqAK0EzjeDu4hEVl1Qa6dBHJfSiK1bJP4ZEddV2fRCMIv4CxtF5I1LSUenJxV2uGhjq9ikFduvJGNPBz8Qjn1H2IDUicmLqLbwg0KLl9h2hQSAVzuSXRyhQwhndgiQqsDOKT0Bc1Smv7jsO3dTqV1Gj9SphpuPd+CRQotaWLrS5yof1Pz8GqsLaMIqEUoxXRI9a2W1Yj08DMQzbDxG4YweBRkdFBh+f6VDdKS8ZFslxp1Hmbx1Ki6jtnJeGzXT0x5InFhITaFNxJTYRUy8sL1LhmhtK6wsPJiKdUtLKpJcxf5FM6zqqsZtaVUsbWuZezrya9xcWczjmjug9NRbVx6NQoLaqWNKsVDtDkiKYPeSiAARM6ziRxhIdaBToJ9giJqAQqTQn+Ej4JK3S7FhCiddMIeYioHdo3sIyiAmi6iDr9BpildgAVlem5cIsdNsVFLgna2+S5trctriWJZ2ztvRIXVjzuj+ZYwhg6y5wTRW5dlUoeTw3Upps8U+oB8TjTS6dDPa7RxU3f3L9ydjqMocP3R8PsCvrz6r6YS6eTtjFpmVKScRONvJpyUZOK6ySbS+7JxpBqdSS9qbUX1SbSf3QetauKTysP8AUuKkV7i0M2t04tHdnkJQsHOcYxaTl03Zx+wsvg8d3ovrC63L5LuxrInoXo6MFF1p75PnEcqKNC9Bo/24+U2Z9jWmrTF4JUug1SqAq1r9Po8x/c8pFDOjiWVKYzAqqdTA9RqAQkkWEET2AKUxiMhio8oBIxIo7kIAqIyOKZF1AkSPMFNkZVAM6gCxI7VkDpUss9HlljbU8DxjpbGJO2t8YLGnEHTiEbOlLCub0m5YFa1ykL3Vy0Vde4YG8LK6d7LCV4eMzcahtljk8LyH4xP/2Q==" class="w3-left w3-margin-right" style="width:50px">
           <span class="w3-large">NyanNyan</span><br>
           <span>Hit or Miss</span>
         </li>
+        </a>
+       <a href="https://twitter.com/rachaelray?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank"> 
         <li class="w3-padding-16">
           <img src="https://food.fnr.sndimg.com/content/dam/images/food/fullset/2011/11/10/1/RG_Rachael-Ray_s4x3.jpg.rend.hgtvcom.616.462.suffix/1371603143617.jpeg" class="w3-left w3-margin-right" style="width:50px">
           <span class="w3-large">Racheal Ray</span><br>
           <span>Inspriing, Postive</span>
         </li> 
+        </a>
       </ul>
     </div>
 
