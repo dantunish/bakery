@@ -35,29 +35,18 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
   
 <!-- !PAGE CONTENT! -->
 <div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px">
-    <% if i in @all %>
-        <%= puts i %>
-    <% end %>
+
+
   <!-- First Photo Grid-->
   <div class="w3-row-padding w3-padding-16 w3-center" id="food">
-    <%# for i in @aller %>
+    <% for i in @all do %>
         <div class="w3-third ">
-            <img src="<%# i.image %>" alt="Cake" style="width:100%">
-            <h3><%# i.name %></h3>
-            <p><%# i.description %></p>
-            <p><%# i.price %></p>
+            <img src="<%= i.image %>" alt="Cake" style="width:100%">
+            <h3><%= i.name %></h3>
+            <p><%= i.description %></p>
+            <p><%= i.price %></p>
         </div>
-    <%# end %>
-    <div class="w3-third ">
-      <img src="https://thebusybaker.ca/wp-content/uploads/2018/08/best-ever-greek-yogurt-chocolate-chip-muffins-fbig3.jpg" alt="Muffin" style="width:100%">
-      <h3>Muffins: Ones We Use</h3>
-      <p>Once again, our muffins were rated the best on this side of the InterWebs!</p>
-    </div>
-    <div class="w3-third ">
-      <img src="https://www.mybakingaddiction.com/wp-content/uploads/2016/04/mm-cookies-4-1500-1-600x900.jpg" alt="Cookies" style="width:100%">
-      <h3>Cookies: Ones we Own</h3>
-      <p>Cookies so delscious we sell out rightafter!</p>
-    </div>
+    <% end %>
   </div>
 
   
