@@ -1,11 +1,10 @@
 require 'sinatra'
 require 'csv'
 
-
 get '/' do
     erb :index
 end
-
+# CAke erb stuff
 class Cake 
     attr_accessor :name
     attr_accessor :image
@@ -23,29 +22,23 @@ end
 
 get '/cake' do
     @all  = [
-    Cake.new('Chocolate', 'https://www.handletheheat.com/wp-content/uploads/2018/08/Best-Chocolate-Cake-SQUARE.jpg', 'Grown from Ecuador', '30.00'),
-    Cake.new('Red Velvet', 'https://cafedelites.com/wp-content/uploads/2018/05/Red-Velvet-Cake-IMAGE-43.jpg', 'Grown from My House', '40.00'),
-    Cake.new('Pople', 'https://i.imgur.com/s3mg809.jpg', 'Grown Organically', '50.00'),
+    Cake.new('People Cake', 'https://i.imgur.com/s3mg809.jpg', 'Grown Organically', '50.00'),
+    Cake.new('Chocolate Cake', 'https://www.handletheheat.com/wp-content/uploads/2018/08/Best-Chocolate-Cake-SQUARE.jpg', 'Grown from Ecuador', '30.00'),
+    Cake.new('Red Velvet Cake', 'https://cafedelites.com/wp-content/uploads/2018/05/Red-Velvet-Cake-IMAGE-43.jpg', 'Grown from My House', '40.00'),
 ]
     erb :cake
 end
-
-
-=begin
-for i in @all 
-    puts i
-    puts i.name
-    puts  i.image
-    puts  i.description
-    puts  i.price
-end
-=end
+#  Muffin erb stuff
 class Muffin 
-    def initialize(name, image, description, price)
-        @name = name
-        @image = image
-        @description = description
-        @price = price
+    attr_accessor :nam
+    attr_accessor :imag
+    attr_accessor :descriptio
+    attr_accessor :pric
+    def initialize(nam, imag, descriptio, pric)
+        @nam = nam
+        @imag = imag
+        @descriptio = descriptio
+        @pric = pric
     end
 end
 
@@ -55,10 +48,26 @@ get '/muffin' do
         Muffin.new('Oatmeal Healthy Muffin', 'https://dailyburn.com/life/wp-content/uploads/2016/02/Pumpkin-Spice-Oatmeal-Muffins-Recipe.jpg', 'Exoitc Muffin from Indonesia', '15.00'),
         Muffin.new('Crazy Muffins!!', 'https://3.bp.blogspot.com/-3wgtFuSDyPk/WC4ye0a0g7I/AAAAAAAAek0/WGUPHR35OPU-NHv1GZcfvKi_i3i9kI00QCLcB/s1600/Crazy%2BCake%2BCupcakes%2B3.jpg', 'Even we Don\'t Know What\'s inside!?!?', '25.00')
     ]
-    erb :muffin
-end
 
+    for a in @river
+        puts a
+        puts a.nam
+        puts  a.imag
+        puts  a.descriptio
+        puts  a.pric
+    end
+
+    erb :muffin
+
+end
+# Cookies erb stuff
 class Cookies
+
+    attr_accessor :name
+    attr_accessor :image
+    attr_accessor :description
+    attr_accessor :price
+
     def initialize(name, image, description, price)
         @name = name
         @image = image
@@ -75,3 +84,12 @@ get '/cookie' do
     ]
     erb :cookie
 end
+
+
+
+CSV.open("bakery.csv", "wb") do |csv|
+    csv << ['People Cake', 'https://i.imgur.com/s3mg809.jpg', 'Grown Organically', '50.00']
+
+end
+
+
