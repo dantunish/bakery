@@ -20,10 +20,10 @@ class Cake
 end
 
 get '/cake' do
-    @all  = [
+    @aller  = [
     Cake.new('People Cake', 'https://i.imgur.com/s3mg809.jpg', 'Grown Organically', '50.00'),
     Cake.new('Chocolate Cake', 'https://www.handletheheat.com/wp-content/uploads/2018/08/Best-Chocolate-Cake-SQUARE.jpg', 'Grown from Ecuador', '30.00'),
-    Cake.new('Red Velvet Cake', 'https://cafedelites.com/wp-content/uploads/2018/05/Red-Velvet-Cake-IMAGE-43.jpg', 'Grown from My House', '40.00'),
+    Cake.new('Red Velvet Cake', 'https://cafedelites.com/wp-content/uploads/2018/05/Red-Velvet-Cake-IMAGE-43.jpg', 'Grown from My House', '40.00')
 ]
     erb :cake
 end
@@ -41,8 +41,6 @@ class Muffin
         @pric = pric
     end
 end
-
-
 
 get '/muffin' do
     @river = [
